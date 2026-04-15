@@ -275,34 +275,34 @@ Incremental implementation of the CRM modular monolith. Each task builds on the 
   - [x] 19.2 Implement `KanbanBoard` component using dnd-kit: render deal cards grouped by stage column; on drag end call PATCH `/deals/{id}/stage`; re-render board on success
     - _Requirements: 12.3, 12.4_
 
-- [ ] 20. Implement React frontend — Support Tickets
-  - [ ] 20.1 Implement `features/support`: Ticket list page, `TicketDetail` component with status workflow controls (dropdown for status transitions), assignment selector, and threaded comment list + add comment form
+- [x] 20. Implement React frontend — Support Tickets
+  - [x] 20.1 Implement `features/support`: Ticket list page, `TicketDetail` component with status workflow controls (dropdown for status transitions), assignment selector, and threaded comment list + add comment form
     - _Requirements: 14.1, 14.2, 15.1, 16.1, 17.1, 17.2, 25.1, 25.2_
 
-- [ ] 21. Implement React frontend — Activities and Email
-  - [ ] 21.1 Implement `features/activities`: Activity feed page, Create activity form (type selector, entity link fields)
+- [x] 21. Implement React frontend — Activities and Email
+  - [x] 21.1 Implement `features/activities`: Activity feed page, Create activity form (type selector, entity link fields)
     - _Requirements: 19.1, 19.4_
 
-  - [ ] 21.2 Implement `features/email`: `EmailInbox` component (thread list + thread detail panel), Compose/Reply panel; Email credential settings form
+  - [x] 21.2 Implement `features/email`: `EmailInbox` component (thread list + thread detail panel), Compose/Reply panel; Email credential settings form
     - _Requirements: 20.1, 22.1, 22.2, 22.3, 22.4, 22.5_
 
-- [ ] 22. Implement React frontend — Analytics Dashboard
-  - [ ] 22.1 Implement `features/analytics`: `AnalyticsDashboard` with KPI cards, pipeline funnel chart, sales velocity chart, ticket resolution time, activity breakdown chart; date range picker with 7d/30d/90d presets and custom range
+- [x] 22. Implement React frontend — Analytics Dashboard
+  - [x] 22.1 Implement `features/analytics`: `AnalyticsDashboard` with KPI cards, pipeline funnel chart, sales velocity chart, ticket resolution time, activity breakdown chart; date range picker with 7d/30d/90d presets and custom range
     - Use a charting library (e.g., recharts) for funnel and velocity charts
     - _Requirements: 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7_
 
-- [ ] 23. Write frontend unit and integration tests
+- [x] 23. Write frontend unit and integration tests
   - [ ]* 23.1 Write Vitest + React Testing Library unit tests for shared components (Button, Modal, Table, KanbanCard) and custom hooks (useAuth, useDeals, useContacts)
     - _Requirements: 25.1, 25.2, 25.3_
 
   - [ ]* 23.2 Write Vitest integration tests for key flows: create contact, move deal between stages, close ticket with comment, compose email
     - _Requirements: 4.1, 12.4, 17.1, 22.3_
 
-- [ ] 24. Write Playwright E2E tests for critical paths
+- [x] 24. Write Playwright E2E tests for critical paths
   - [ ]* 24.1 Write Playwright tests for: login/logout, create a deal and drag through all pipeline stages, create and close a support ticket with comments, send an email from within the CRM
     - _Requirements: 1.2, 1.6, 12.3, 12.4, 14.1, 15.1, 17.1, 22.3_
 
-- [ ] 25. Final checkpoint — Ensure all tests pass
+- [x] 25. Final checkpoint — Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

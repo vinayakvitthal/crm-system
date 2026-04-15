@@ -16,6 +16,7 @@ import CompaniesPage from "@/pages/CompaniesPage";
 import { ContactDetailPage, CompanyDetailPage } from "@/features/contacts";
 import { LeadsPage, DealsPage, PipelinesPage, KanbanPage } from "@/features/sales";
 import TicketsPage from "@/pages/TicketsPage";
+import { TicketDetail } from "@/features/support";
 import ActivitiesPage from "@/pages/ActivitiesPage";
 import EmailPage from "@/pages/EmailPage";
 import AnalyticsPage from "@/pages/AnalyticsPage";
@@ -79,6 +80,7 @@ function AppRoutes() {
         <Route path="/sales/pipelines" element={<PipelinesPage />} />
         <Route path="/sales/kanban" element={<KanbanPage />} />
         <Route path="/tickets" element={<TicketsPage />} />
+        <Route path="/tickets/:id" element={<TicketDetail />} />
         <Route path="/activities" element={<ActivitiesPage />} />
         <Route path="/email" element={<EmailPage />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
