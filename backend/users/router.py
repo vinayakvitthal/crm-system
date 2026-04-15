@@ -22,7 +22,7 @@ from backend.users.schemas import (
     UserResponse,
 )
 from backend.core.config import settings
-from backend.core.deps import require_admin
+from backend.core.deps import require_admin, get_current_user
 from jose import jwt
 
 logger = logging.getLogger(__name__)
@@ -257,4 +257,30 @@ async def update_user_role(
     user.role = body.role
     await db.commit()
     await db.refresh(user)
+    return user
+
+
+@users_router.get("/me", response_model=UserResponse)
+async def get_me(
+    current_user: dict = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> User:
+    """Return the currently authenticated user."""
+    result = await db.execute(select(User).where(User.id == _uuid.UUID(current_user["sub"])))
+    user: User | None = result.scalar_one_or_none()
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+    return user
+
+
+@users_router.get("/me", response_model=UserResponse)
+async def get_me(
+    current_user: dict = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> User:
+    """Return the currently authenticated user."""
+    result = await db.execute(select(User).where(User.id == _uuid.UUID(current_user["sub"])))
+    user: User | None = result.scalar_one_or_none()
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return user
